@@ -146,7 +146,7 @@ video {
   <h1>You’re really mean :(</h1>
   <video id="chatVideo" src="chat.mp4" muted playsinline></video>
   <h2>itna sorry mt bola kr</h2>
-  <button class="proceed" onclick="playVideoAndNext()">Okay fine 😭</button>
+  <button class="proceed" onclick="playVideoAndNext()">Next →</button>
 </div>
 
 <!-- PAGE 4 -->
@@ -206,7 +206,7 @@ document.body.addEventListener("click", () => {
   }, 200);
 }, { once:true });
 
-/* VIDEO */
+/* VIDEO + NEXT */
 function playVideoAndNext() {
   const vid = document.getElementById("chatVideo");
   vid.play().catch(()=>{});
