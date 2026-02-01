@@ -2,151 +2,232 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For You</title>
+<title>for kittu beta only</title>
 
 <style>
-* { box-sizing: border-box; }
-
 body {
   margin: 0;
   height: 100vh;
-  background: radial-gradient(circle at top, #2b1055, #000);
+  background: linear-gradient(135deg, #ffc0d9, #fff);
+  font-family: "Comic Sans MS", "Segoe UI", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Segoe UI", sans-serif;
-  color: #fff;
   overflow: hidden;
 }
 
 .card {
-  background: rgba(0,0,0,0.75);
-  padding: 30px;
-  width: 340px;
-  border-radius: 20px;
+  background: white;
+  width: 360px;
+  padding: 25px;
+  border-radius: 28px;
+  box-shadow: 0 25px 50px rgba(255,105,180,0.45);
   text-align: center;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-  opacity: 0;
-  transform: scale(0.95);
-  transition: all 0.6s ease;
+  display: none;
   position: absolute;
 }
 
-.card.active {
-  opacity: 1;
-  transform: scale(1);
-  z-index: 2;
-}
+.card.active { display: block; }
 
-h1, h2 {
-  font-weight: 600;
-}
+h1 { color: #ff3f8b; margin: 8px 0; }
+h2 { color: #ff77aa; }
 
 button {
-  padding: 11px 22px;
-  margin: 12px;
-  font-size: 16px;
   border: none;
-  border-radius: 12px;
+  border-radius: 30px;
+  padding: 12px 26px;
+  font-size: 16px;
   cursor: pointer;
+  margin: 10px;
 }
 
-.yes {
-  background: #ff4d6d;
-  color: white;
-}
+.yes { background: #ff3f8b; color: white; }
+.proceed { background: #ff86b7; color: white; }
 
 .no {
-  background: #444;
-  color: white;
+  background: #eee;
   position: absolute;
-}
-
-.proceed {
-  background: #6c63ff;
-  color: white;
+  left: 120px;
+  top: 240px;
 }
 
 img {
-  width: 240px;
-  border-radius: 16px;
-  margin: 15px 0;
+  width: 250px;
+  border-radius: 22px;
+  margin: 12px 0;
+}
+
+video {
+  width: 260px;
+  border-radius: 20px;
+  margin: 12px 0;
 }
 
 .letter {
-  text-align: left;
   font-size: 15px;
-  line-height: 1.7;
-  min-height: 180px;
+  line-height: 1.6;
+  text-align: left;
 }
 
-.heart {
-  position: absolute;
-  color: #ff4d6d;
+.big {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff3f8b;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.loading {
   font-size: 18px;
-  animation: floatUp 6s linear infinite;
-  opacity: 0.6;
+  color: #ff3f8b;
+  min-height: 60px;
 }
 
-@keyframes floatUp {
-  0% { transform: translateY(0); opacity: 0; }
-  20% { opacity: 0.6; }
-  100% { transform: translateY(-120vh); opacity: 0; }
+.chat {
+  background: #e5ddd5;
+  padding: 15px;
+  border-radius: 20px;
+  text-align: left;
+}
+
+.bubble {
+  background: #dcf8c6;
+  padding: 12px 16px;
+  border-radius: 16px;
+  display: inline-block;
+  max-width: 80%;
+  font-size: 16px;
+}
+
+.easter {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #666;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.easter.show { opacity: 1; }
+
+.sticker {
+  width: 160px;
+  transform: rotate(-6deg);
+  animation: bounce 1.6s infinite;
+  margin-bottom: 6px;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(-6px) rotate(-6deg); }
+}
+
+#musicIndicator {
+  position: fixed;
+  bottom: 14px;
+  right: 16px;
+  font-size: 13px;
+  color: #ff3f8b;
+  background: rgba(255,255,255,0.85);
+  padding: 6px 10px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  display: none;
 }
 </style>
 </head>
 
 <body>
 
-<iframe id="music" width="0" height="0"
-src="https://www.youtube.com/embed/8Bfzr7e8M0U?autoplay=1&loop=1&playlist=8Bfzr7e8M0U"
-allow="autoplay">
-</iframe>
+<audio id="bgm" src="song.mp3" loop></audio>
+<div id="musicIndicator">🎵 playing</div>
 
 <div class="card active" id="p1">
-  <h2>Proceed only if you’re</h2>
-  <h1>Kriti Chhabra (Kittu)</h1>
-  <button class="proceed" onclick="next(1)">Proceed</button>
+  <h1>🚨 RESTRICTED WEBSITE 🚨</h1>
+  <h2>Proceed only if you are</h2>
+  <h1>Kriti Chhabra (Kittu) </h1>
+  <button class="proceed" onclick="next(1)">Okay it’s me 😌</button>
 </div>
 
 <div class="card" id="p2">
   <img src="photo.jpeg">
-  <h2>Do you feel bad for giving me blue balls this day?</h2>
-  <button class="yes" onclick="next(2)">Yes</button>
-  <button class="no" id="noBtn">No</button>
+  <h1>Do you feel bad for giving me blue balls this day?</h1>
+  <button class="yes" onclick="next(2)">Yes 😔</button>
+  <button class="no" id="noBtn">No 😎</button>
 </div>
 
 <div class="card" id="p3">
+  <img src="sticker.jpg" class="sticker">
   <h1>You’re really mean :(</h1>
-  <button class="proceed" onclick="next(3)">Proceed</button>
+  <h2>sirf sorry bolti rehti hai</h2>
+  <video id="chatVideo" src="chat.mp4" autoplay muted loop playsinline></video>
+  <p style="font-size:13px;color:#ff77aa;">Exhibit A: certified yapper 🫶</p>
+  <button class="proceed" onclick="next(3)">Okay fine 😭</button>
 </div>
 
 <div class="card" id="p4">
-  <h1>Do you love me?</h1>
-  <button class="yes" onclick="next(4)">Yes</button>
+  <h1>FINAL QUESTION 💗</h1>
+  <h2>Do you love me?</h2>
+  <button class="yes" onclick="next(4)">Obviously </button>
 </div>
 
 <div class="card" id="p5">
-  <h1>For You</h1>
+  <h1>For You </h1>
   <div class="letter" id="letter"></div>
+  <button class="proceed" onclick="next(5)">Continue</button>
+</div>
+
+<div class="card" id="p6">
+  <h1>Final verification </h1>
+  <div class="loading" id="loading"></div>
+</div>
+
+<div class="card" id="p7">
+  <div class="chat">
+    <div class="bubble">I love you Kriti 💖</div>
+    <div class="easter" id="easter">You’re stuck with me now 😌</div>
+  </div>
 </div>
 
 <script>
-let current = 1;
-
 function next(n) {
   document.getElementById("p" + n).classList.remove("active");
   document.getElementById("p" + (n + 1)).classList.add("active");
-  current++;
+  if (n === 5) startLoading();
 }
 
 const noBtn = document.getElementById("noBtn");
-noBtn.addEventListener("mouseover", () => {
-  const x = Math.random() * (window.innerWidth - 120);
-  const y = Math.random() * (window.innerHeight - 60);
-  noBtn.style.left = x + "px";
-  noBtn.style.top = y + "px";
-});
+const card = document.getElementById("p2");
+["mouseover","mousedown","touchstart"].forEach(e =>
+  noBtn.addEventListener(e, () => {
+    const x = Math.random() * (card.clientWidth - noBtn.clientWidth - 20);
+    const y = Math.random() * (card.clientHeight - noBtn.clientHeight - 20);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  })
+);
+
+const bgm = document.getElementById("bgm");
+const indicator = document.getElementById("musicIndicator");
+let started = false;
+
+document.body.addEventListener("click", () => {
+  if (started) return;
+  started = true;
+  indicator.style.display = "block";
+  let vol = 0;
+  bgm.volume = 0;
+  bgm.play().catch(()=>{});
+  const fade = setInterval(() => {
+    if (vol < 0.4) {
+      vol += 0.02;
+      bgm.volume = vol;
+    } else clearInterval(fade);
+  }, 200);
+}, { once: true });
+
+const chatVideo = document.getElementById("chatVideo");
+chatVideo.addEventListener("play", () => bgm.volume = 0.15);
+chatVideo.addEventListener("pause", () => bgm.volume = 0.4);
 
 const text = `if you think nobody loves you, consider me dead
 you think i js say it,
@@ -155,31 +236,51 @@ i just want you to be happy too,
 and always be by my side.
 
 also, im planning to come to Mohali,
-prolly the first week of March.
-
-I love you, Kriti.`;
+prolly the first week of March.`;
 
 let i = 0;
+const letterDiv = document.getElementById("letter");
+
 function typeLetter() {
   if (i < text.length) {
-    document.getElementById("letter").innerHTML +=
-      text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
-    i++;
-    setTimeout(typeLetter, 45);
+    if (text.substring(i, i+5) === "<big>") {
+      letterDiv.innerHTML += "<div class='big'>";
+      i += 5;
+    } else if (text.substring(i, i+6) === "</big>") {
+      letterDiv.innerHTML += "</div>";
+      i += 6;
+    } else {
+      letterDiv.innerHTML += text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
+      i++;
+    }
+    setTimeout(typeLetter, 35);
   }
 }
+document.getElementById("p5").addEventListener("click", typeLetter, { once:true });
 
-document.getElementById("p5").addEventListener("transitionend", typeLetter);
-
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "❤";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = 12 + Math.random() * 16 + "px";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 6000);
-}, 700);
+function startLoading() {
+  const loading = document.getElementById("loading");
+  const steps = [
+    "Checking feelings…",
+    "Checking feelings… 78%",
+    "Checking feelings… 99%",
+    "Yes confirmed ❤️"
+  ];
+  let i = 0;
+  const interval = setInterval(() => {
+    loading.innerText = steps[i++];
+    if (i === steps.length) {
+      clearInterval(interval);
+      setTimeout(() => {
+        document.getElementById("p6").classList.remove("active");
+        document.getElementById("p7").classList.add("active");
+        setTimeout(() => {
+          document.getElementById("easter").classList.add("show");
+        }, 5000);
+      }, 800);
+    }
+  }, 900);
+}
 </script>
 
 </body>
