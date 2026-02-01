@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Kriti Only 💖</title>
+<title>kitty</title>
 
 <style>
 body {
@@ -124,39 +124,34 @@ video {
 <audio id="bgm" src="song.mp3" loop></audio>
 <div id="musicIndicator">🎵 playing</div>
 
-<!-- PAGE 1 -->
 <div class="card active" id="p1">
   <h1>🚨 RESTRICTED WEBSITE 🚨</h1>
   <h2>Proceed only if you are</h2>
-  <h1>Kriti Chhabra (Kittu) 💕</h1>
-  <button class="proceed" onclick="next(1)">Okay it’s me 😌</button>
+  <h1>Kriti Chhabra (Kittu) </h1>
+  <button class="proceed" onclick="next(1)">Okay</button>
 </div>
 
-<!-- PAGE 2 -->
 <div class="card" id="p2">
   <img src="photo.jpeg">
-  <h1>Do you feel bad for giving me blue balls today?</h1>
+  <h1>Do you feel bad for giving me blue balls this day?</h1>
   <button class="yes" onclick="next(2)">Yes 😔</button>
   <button class="no" id="noBtn">No 😎</button>
 </div>
 
-<!-- PAGE 3 -->
 <div class="card" id="p3">
   <img src="sticker.jpg" class="sticker">
   <h1>You’re really mean :(</h1>
-  <video id="chatVideo" src="chat.mp4" muted playsinline></video>
+  <video id="chatVideo" src="chat.mp4" autoplay muted loop playsinline></video>
   <h2>itna sorry mt bola kr</h2>
-  <button class="proceed" onclick="playVideoAndNext()">Next →</button>
+  <button class="proceed" onclick="next(3)">Next →</button>
 </div>
 
-<!-- PAGE 4 -->
 <div class="card" id="p4">
   <h1>FINAL QUESTION 💗</h1>
   <h2>Do you love me?</h2>
-  <button class="yes" onclick="next(4)">Obviously 🙄❤️</button>
+  <button class="yes" onclick="next(4)">Obviously</button>
 </div>
 
-<!-- PAGE 5 LOADING -->
 <div class="card" id="p5">
   <h1>Checking feelings…</h1>
   <div class="progress">
@@ -165,7 +160,6 @@ video {
   <h2 id="status">78%</h2>
 </div>
 
-<!-- PAGE 6 LETTER -->
 <div class="card" id="p6">
   <h1>For You 💌</h1>
   <div class="letter" id="letter"></div>
@@ -178,7 +172,6 @@ function next(n) {
   if (n === 4) startLoading();
 }
 
-/* NO button dodge */
 const noBtn = document.getElementById("noBtn");
 const card = document.getElementById("p2");
 ["mouseover","mousedown","touchstart"].forEach(e =>
@@ -188,7 +181,6 @@ const card = document.getElementById("p2");
   })
 );
 
-/* MUSIC */
 const bgm = document.getElementById("bgm");
 const indicator = document.getElementById("musicIndicator");
 let started = false;
@@ -206,14 +198,6 @@ document.body.addEventListener("click", () => {
   }, 200);
 }, { once:true });
 
-/* VIDEO + NEXT */
-function playVideoAndNext() {
-  const vid = document.getElementById("chatVideo");
-  vid.play().catch(()=>{});
-  setTimeout(() => next(3), 900);
-}
-
-/* LOADING BAR */
 function startLoading() {
   const bar = document.getElementById("bar");
   const status = document.getElementById("status");
@@ -224,16 +208,16 @@ function startLoading() {
 }
 
 /* LETTER */
-const text = `If you think nobody loves you, consider me dead.
-You think I just say it,
-but you’ve no idea how happy I get talking to you.
-I just want you to be happy too,
-and always be by my side.
+const text = `if you think nobody loves you, consider me dead
+you think i js say it,
+but you’ve no idea how happy i get talking to you
+i just want you to be happy too,
+and always be by my side
 
-Also, I’m planning to come to Mohali,
-probably the first week of March.
+also, im planning to come to mohali,
+prollly the first week of march.
 
-<big>I love you, Kriti.</big>`;
+<big>I love you Kriti.</big>`;
 
 let i = 0;
 const letterDiv = document.getElementById("letter");
